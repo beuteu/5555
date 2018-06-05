@@ -121,32 +121,6 @@ public class BoardController {
 		return mv;
 	}
 
-	/*
-	 * 리스트JOSN 20180601 이종열
-	 */
-	@RequestMapping(value = "/listAjax.do")
-	public @ResponseBody Map<String, Object> getJsonByMap(BoardVO vo, Integer page, Search search) throws Exception {
-		
-		Map<String, Object> jsonObject = new HashMap<String, Object>();
-		 
-		System.out.println("JSON VO들어왔고 VO출력:" + vo);
-		System.out.println("JSON page들어왔고 page출력:" + page);
-
-		int total = service.pageCount(search);
-
-		page = (page == null ? 1 : page);
-		int curpage = page - 1;
-
-		search.setBno(curpage * 10);
-		
-		jsonObject.put("list", service.boardList(search));
-		jsonObject.put("pageMaker",  new PageMaker(page, total));
-		jsonObject.put("page", page);
-		
-
-		return jsonObject;
-
-	}
 
 	/*
 	 * 리스트JOSN 20180601 이종열
