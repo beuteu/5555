@@ -1,4 +1,4 @@
-package com.spring.web.board.web;
+package com.spring.web.board.serivce.web;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
