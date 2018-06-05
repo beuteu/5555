@@ -80,8 +80,6 @@
 					<th class='TableCenter'>등록일</th>
 					<th class='TableCenter'>히트수</th>
 				</tr>
-				<c:if test="${not empty list}">
-				<c:forEach items="${list}" var="lee">
 					<tr>
 						<td class='TableCenter'><input type="checkbox" name="nn" value="${lee.bno }" /></td>
 						<td class='TableCenter'>${lee.bno}</td>
@@ -90,16 +88,12 @@
 						<td class='TableCenter'>${lee.rgsde}</td>
 						<td class='TableCenter'>${lee.viewPoint}</td>
 					</tr>
-				</c:forEach>
-				</c:if>
-				<c:if test="${empty list}">
 					<tr>
 						<td class='TableCenter' colspan="6">데이터가 없습니다.</td>
 					</tr>
 				</c:if>
 			</table>
 		</form>
-		<ul class="pagination">
 		<c:if test="${page.prev}">
 			<li><a href="/board/list?page=${page.start-1 }&searchCondition=${search.searchCondition}&searchText=${search.searchText}">◀</a></li>
 		</c:if>
